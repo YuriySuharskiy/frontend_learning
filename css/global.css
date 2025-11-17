@@ -1,0 +1,34 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red;  for development purposes only */
+}
+
+:root {
+    --bg-primary: #faf4f2;
+    --bg-secondary: #ffffff;
+    --bg--tertiary: #f3e8e4;
+    --font-color-highlight: #ED6435;
+    --font-family-secondary: 'PT Sans', sans-serif;
+    
+
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-color-highlight);
+}
+
+a:hover {
+  text-decoration: underline;
+}

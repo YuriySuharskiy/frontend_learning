@@ -1,0 +1,45 @@
+.header__nav {
+    display: flex;
+    padding: 30px 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav-logo {
+    max-width: 182px;
+}
+
+.header__nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: var(--font-family-secondary);
+    
+    a {
+        color: #6B6B6B;
+    }
+}
+
+.header__nav-social_links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 55px;
+}
+
+.header__nav-social_circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #45c1c6;
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+}
