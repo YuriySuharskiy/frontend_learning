@@ -3,6 +3,8 @@
     padding: 30px 40px;
     align-items: center;
     justify-content: space-between;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 
 .header__nav-logo {

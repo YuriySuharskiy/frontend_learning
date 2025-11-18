@@ -1,12 +1,78 @@
 .hero-bg {
     position: absolute;
-    width: 105%;
+    width: 106%;
     background: url("../img/cover.png") no-repeat center center;
     background-size: cover;
     z-index: -1;
+    top:-10px;
 }
 
 .hero-wrapper {
     width: 100%;
+    max-width: 1285px;
     height: 921px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 55px auto 0 auto;
+    padding: 0 15px;
+}
+
+.hero-title {
+    font-size: 82px;
+    font-weight: 700;
+    font-family: var(--font-family-primary);
+    color: #3C3731;
+    max-width: 557px;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-size: 19px;
+    font-weight: 400;
+    font-family: var(--font-family-secondary);
+    color: #958B7E;
+    max-width: 496px;
+    margin-top: 50px;
+}
+
+.hero-buttons {
+    font-family: var(--font-family-secondary);
+    font-size: 16.5px;
+    width: 337px;
+    display: flex;
+    padding-top: 50px;
+}
+
+.hero-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-button-primary {
+    width: 126.41px;
+    height: 51.8px;
+    background-color: #ffe6d4;
+    
+}
+
+.hero-button-secondary {
+    width: 170.73px;
+    height: 51.8px;
+    margin-left: 13px;
+    border: 1px solid #45c1c6;
+}
+
+.svg_test {
+    width: 24px;
+    height: 21.5px;
+    margin-left: 9px;
+    position: relative;
+    top: 5px;
 }
