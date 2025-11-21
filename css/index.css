@@ -2,3 +2,5 @@
 @import "global.header-top-line.partial.css";
 @import "global.header-nav.partial.css";
 @import "index.hero-partial.css";
+@import "index.banner-partial.css";
+@import "index.pets_carousel-partial.css";

@@ -1,30 +1,40 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 800px * 1.2 */
+    overflow: hidden; /* Ховає частину, що виходить за межі */
+}
+
 .hero-bg {
     position: absolute;
-    width: 106%;
-    background: url("../img/cover.png") no-repeat center center;
+    width: 100%;
+    height: 100%;
+    background: url("../img/bg-partial/cover.png") no-repeat center center;
     background-size: cover;
     z-index: -1;
-    top:-10px;
 }
 
 .hero-wrapper {
+    position: relative;
     width: 100%;
-    max-width: 1285px;
-    height: 921px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    margin: 55px auto 0 auto;
-    padding: 0 15px;
+    margin: 0;
+}
+
+.hero-content {
+    padding-left: 25px;
 }
 
 .hero-title {
-    font-size: 82px;
+    font-size: 48px;
     font-weight: 700;
     font-family: var(--font-family-primary);
     color: #3C3731;
-    max-width: 557px;
+    max-width: 100%;
     line-height: 1;
 }
 
@@ -33,8 +43,9 @@
     font-weight: 400;
     font-family: var(--font-family-secondary);
     color: #958B7E;
-    max-width: 496px;
-    margin-top: 50px;
+    max-width: 100%;
+    margin-top: 38px;
+    font-weight: 400;
 }
 
 .hero-buttons {
@@ -43,6 +54,8 @@
     width: 337px;
     display: flex;
     padding-top: 50px;
+    padding-left: 25px;
+    gap: 6px;
 }
 
 .hero-button {
@@ -53,26 +66,74 @@
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 1px;
+    height: 51.8px;
 }
 
 .hero-button-primary {
     width: 126.41px;
-    height: 51.8px;
     background-color: #ffe6d4;
-    
+}
+
+.hero-button-primary:hover {
+    color: #45c1c6;
+    text-decoration: none;
+    background-color: #b2e7e9;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .hero-button-secondary {
     width: 170.73px;
-    height: 51.8px;
     margin-left: 13px;
     border: 1px solid #45c1c6;
+    color: #45c1c6; 
+    position: relative; 
+    top: -3px;
 }
 
 .svg_test {
     width: 24px;
     height: 21.5px;
     margin-left: 9px;
+    top: 1px;
     position: relative;
-    top: 5px;
+}
+
+.hero-button-secondary:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #45c1c6;;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        height: 1000px; /* 921px * 1.2 */
+    }
+
+    .hero-wrapper {
+        max-width: 1250px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .hero-content {
+        width: 45vw;
+    }
+
+    .hero-title {
+        font-size: 82px;
+        max-width: 557px;
+    }
+
+    .hero-subtitle {
+        font-size: 19px;
+        max-width: 496px;
+        margin-top: 45px;
+    }
+}
+
+.hero-bg_is-active {
+    display: none;
 }

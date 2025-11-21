@@ -1,47 +1,238 @@
 .header__nav {
-    display: flex;
-    padding: 30px 40px;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1250px;
-    margin: 0 auto;
+  display: flex;
+  padding: 33px 24px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1250px;
+  margin: 0 auto;
+  position: absolute;
+  width: 100vw;
+  z-index: 1000;
 }
 
 .header__nav-logo {
-    max-width: 182px;
+  max-width: 182px;
 }
 
 .header__nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    font-weight: 600;
-    font-size: 15px;
-    font-family: var(--font-family-secondary);
-    
-    a {
-        color: #6B6B6B;
-    }
+  display: none;
+  align-items: center;
+  font-weight: 600;
+  font-family: var(--font-family-secondary);
+
+  a {
+    color: #6b6b6b;
+  }
+  a {
+    position: relative;
+  }
+
+  a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--font-color-highlight);
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
 }
 
 .header__nav-social_links {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-left: 55px;
+  display: none;
+  align-items: center;
 }
 
 .header__nav-social_circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #45c1c6;
+  text-decoration: none;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.header__nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  border: none;
+  background: none;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.header__nav-hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: #3c3731;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header__nav-hamburger-1 {
+  top: 9px;
+}
+
+.header__nav-hamburger-2 {
+  top: 16px;
+}
+
+.header__nav-hamburger-3 {
+  top: 23px;
+}
+
+.header__nav-hamburger_is-active {
+  .header__nav {
+    z-index: 2;
+  }
+
+  .header__nav-hamburger-1 {
+    top: 19px;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  .header__nav-hamburger-2 {
+    opacity: 0;
+  }
+
+  .header__nav-hamburger-3 {
+    top: 19px;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
+
+.header__top_nav {
+  display: none;
+}
+
+.header__nav-social_links {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__nav {
+    padding: 30px 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .header__nav {
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+  }
+
+  .header__nav-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    font-size: 15px;
+  }
+
+  .header__nav-social_links {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 15px;
+    margin-left: 55px;
+  }
+
+  .header__nav-social_circle {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    background-color: #45c1c6;
-    text-decoration: none;
-    color: white;
-    font-family: Arial, sans-serif;
     font-size: 21px;
-    font-weight: bold;
+  }
+
+  .header__nav-hamburger {
+    display: none;
+  }
+}
+
+
+@media (min-width: 1164px) {
+
+  .header__nav-menu {
+    display: flex;
+    gap: 40px;
+    font-size: 15px;
+  }
+}
+
+.header__nav_is-active {
+  overflow: hidden;
+  
+
+  .header__nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+
+    a {
+      padding: 10px 20px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #6B6B6B;
+    }
+  }
+
+  .header__nav-social_links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    position: absolute;
+    top: 433px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    justify-content: center;
+  }
+
+  .header__nav-social_circle {
+    width: 30px;
+    height: 30px;
+    font-size: 21px;
+  }
+
+  .header__top_nav {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-secondary);
+    font-size: 15px;
+    color: var(--font-color-highlight);
+    position: absolute;
+    font-weight: 700;
+    top: 300px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 999;
+    align-items: center;
+  }
 }
