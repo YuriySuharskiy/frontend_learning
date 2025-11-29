@@ -1,101 +1,18 @@
-<link rel="stylesheet" href="css/pets-carousel.css">
-
 <div class="pets-carousel-container">
-  <h2 class="pets-carousel-title">Any Products for Any Pets</h2>
-  <img src="img/icons/bone.svg" alt="bone">
-  <p class="pets-carousel-subtitle">Best picks for your beloved companions only in Happy Paw.</p>
-
-  <div class="pets-carousel">
-    <div class="pets-carousel-track">
-      <div class="pet-card"><img src="img/carousels/pets/dog.png" alt="Dog"><a class="pet-link">For Dogs <span class="pets_highlight">→</span></a><p class="pet-description">Dry & Canned Food • Jerky • Chewy Treats • Bowls • Toys • Collars and Leashes • Clothes</p></div>
-      <div class="pet-card"><img src="img/carousels/pets/cat.png" alt="Cat"><a class="pet-link">For Cats <span class="pets_highlight">→</span></a><p class="pet-description">Dry Food • Wet Food • Treats • Catnip & Grass • Litter Boxes • Bowls & Feeders • Toys • Beds</p></div>
-      <div class="pet-card"><img src="img/carousels/pets/parrot.png" alt="Parrot"><a class="pet-link">For Parrots <span class="pets_highlight">→</span></a><p class="pet-description">Food • Treats • Cages & Stands • Vitamins • Bowls & Feeders • Litter & Nesting • Odor Control</p></div>
-      <div class="pet-card"><img src="img/carousels/pets/rabbit.png" alt="Rabbit"><a class="pet-link">For Rabbits <span class="pets_highlight">→</span></a><p class="pet-description">Food • Treats • Hay • Cages • Litter & Bedding • Harnesses • Toys • Odor Removers</p></div>
-      <div class="pet-card"><img src="img/carousels/pets/hamster.png" alt="Hamster"><a class="pet-link">For Hamsters <span class="pets_highlight">→</span></a><p class="pet-description">Food • Soft & Chewy Treats • Litter • Furniture • Bowls • Toys • Beds</p></div>
-      <div class="pet-card"><img src="img/carousels/pets/fish.png" alt="Fish"><a class="pet-link">For Fish <span class="pets_highlight">→</span></a><p class="pet-description">Food • Feeders • Aquariums • Filters & Pumps • Cleaning • Water Care • Decor</p></div>
-    </div>
-
-    <button class="pets-carousel-btn prev">←</button>
-    <button class="pets-carousel-btn next">→</button>
-
-    <div class="pets-carousel-dots">
-      <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
-      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-    </div>
+<h2 class="pets-carousel-title">Any Products for Any Pets</h2>
+  <img src="img/icons/bone.svg" alt="bone" />
+  <p class="pets-carousel-subtitle">
+    Best picks for your beloved companions only in Happy Paw.
+  </p>
+<div class="pets-carousel">
+  <button class="pets-carousel-button button--prev" type="button" data-bs-target="#pets-carousel" data-bs-slide="prev">
+    <svg class="arrow-svg_1j4" viewBox="0 0 30 30"><defs><path d="M19.533 15l-9.1-9.45c-.577-.6-.577-1.5 0-2.1.578-.6 1.445-.6 2.023 0l10.11 10.5c.29.3.434.75.434 1.05 0 .45-.144.75-.433 1.05l-10.111 10.5c-.29.3-.578.45-1.012.45-.433 0-.722-.15-1.01-.45-.578-.6-.578-1.5 0-2.1l9.1-9.45z" id="a-1763324452032"></path></defs><use fill-rule="nonzero" opacity=".8" xlink:href="#a-1763324452032"></use></svg>
+  </button>
+  <div class="pets-carousel-track">
   </div>
+  <button class="pets-carousel-button button--next" type="button" data-bs-target="#pets-carousel" data-bs-slide="next">
+    <svg class="arrow-svg_1j4" viewBox="0 0 30 30"><defs><path d="M19.533 15l-9.1-9.45c-.577-.6-.577-1.5 0-2.1.578-.6 1.445-.6 2.023 0l10.11 10.5c.29.3.434.75.434 1.05 0 .45-.144.75-.433 1.05l-10.111 10.5c-.29.3-.578.45-1.012.45-.433 0-.722-.15-1.01-.45-.578-.6-.578-1.5 0-2.1l9.1-9.45z" id="a-1763324452032"></path></defs><use fill-rule="nonzero" opacity=".8" xlink:href="#a-1763324452032"></use></svg>
+  </button>
+</div>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const track   = document.querySelector(".pets-carousel-track");
-    const cards   = document.querySelectorAll(".pet-card");
-    const prevBtn = document.querySelector(".pets-carousel-btn.prev");
-    const nextBtn = document.querySelector(".pets-carousel-btn.next");
-    const dots    = document.querySelectorAll(".pets-carousel-dots .dot");
-
-    let index = 0;
-    const totalCards = cards.length;
-
-    // Скільки карток видно одночасно (залежить від ширини екрану)
-    function getVisibleCount() {
-      if (window.innerWidth >= 1200) return 4;
-      if (window.innerWidth >= 900)  return 3;
-      if (window.innerWidth >= 600)  return 2;
-      return 1;
-    }
-
-    function updateCarousel() {
-      const visible = getVisibleCount();
-      const percent = (100 / visible);               // ширина однієї картки у %
-      track.style.transform = `translateX(-${index * percent}%)`;
-
-      // Активна крапка
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-    }
-
-    // → наступна картка
-    nextBtn.addEventListener("click", () => {
-      const visible = getVisibleCount();
-      if (index < totalCards - visible) {
-        index++;
-      } else {
-        index = 0;                // повертаємося на початок (цикл)
-      }
-      updateCarousel();
-    });
-
-    // ← попередня картка
-    prevBtn.addEventListener("click", () => {
-      if (index > 0) {
-        index--;
-      } else {
-        const visible = getVisibleCount();
-        index = totalCards - visible;   // перехід в кінець
-      }
-      updateCarousel();
-    });
-
-    // клік по крапках
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        index = i;
-        updateCarousel();
-      });
-    });
-
-    // автопрокрутка кожні 5 сек
-    setInterval(() => {
-      const visible = getVisibleCount();
-      index = (index + 1) < (totalCards - visible + 1) ? index + 1 : 0;
-      updateCarousel();
-    }, 5000);
-
-    // при зміні розміру екрану
-    window.addEventListener("resize", updateCarousel);
-
-    // перше відображення
-    updateCarousel();
-  });
-</script>

@@ -1,16 +1,17 @@
 /* === PETS CAROUSEL — точно як на твоєму макеті === */
 .pets-carousel-container {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 24px;
   background: #fff;
 }
 
 .pets-carousel-title {
-  font-size: 48px;
-  font-weight: 800;
-  color: #1a1a1a;
+  font-size: 30px;
+  font-weight: 700;
+  color: #3C3741;
   margin: 0 0 20px 0;
   letter-spacing: -0.5px;
+  font-family: var(--font-family-primary);
 }
 
 .pets-carousel-container > img {
@@ -22,10 +23,11 @@
 }
 
 .pets-carousel-subtitle {
-  font-size: 20px;
-  color: #666;
+  font-size: 19px;
+  color: #958B7E;
   margin: 0 0 50px 0;
   font-weight: 400;
+  font-family: var(--font-family-secondary);
 }
 
 /* Головний контейнер каруселі */
@@ -33,126 +35,141 @@
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
-  border-radius: 24px;
-}
-
-/* Трек зі слайдами */
-.pets-carousel-track {
   display: flex;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  align-items: center;
 }
 
-/* Один слайд (картка) */
-.pet-card {
-  min-width: 25%;           /* 4 картки на екран на десктопі */
-  padding: 30px 20px;
-  box-sizing: border-box;
-  text-align: center;
-  background: #fff;
-  transition: transform 0.3s ease;
-}
-
-.pet-image {
-    width: 120px;
-    height: 120px;
+.pets-image {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
 
-.pet-link {
-  font-size: 24px;
+.pets-title {
+  font-family: var(--font-family-primary);
+  font-size: 22px;
+  color: #3C3741;
+  margin: 20px 0 0 0;
   font-weight: 700;
-  color: #4a90e2;
-  text-decoration: none;
-  display: block;
-  margin: 16px 0;
-  transition: color 0.3s;
 }
 
-.pet-link:hover {
-  color: #2b6cb0;
-}
-
-.pet-link .pets_highlight {
-  color: #4a90e2;
-  font-size: 1.2em;
+.pets_highlight {
+  color: var(--color-secondary-highlight);
   margin-left: 4px;
 }
 
-.pet-description {
+.pets-description {
+  font-family: var(--font-family-secondary);
   font-size: 15px;
   color: #666;
   line-height: 1.6;
-  margin: 0;
-  padding: 0 10px;
+  margin: 20px 0 0 0;
 }
 
-/* Стрілки */
-.pets-carousel-btn {
+.pets-carousel-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 33px 20px;
+  border: 2px solid #ffe6d4;
+  margin: 0 7px;
+  min-height: 287px;
+  width: 100%;
+}
+
+.pets-carousel-track {
+  display: flex;
+  width: 100%;
+}
+
+.pets-carousel-button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  color: white;
+  background: #585550;
   border: none;
-  width: 56px;
-  height: 56px;
   border-radius: 50%;
-  font-size: 28px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
-  z-index: 9999;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.pets-carousel-btn:hover {
-  background: rgba(0,0,0,0.7);
-  transform: translateY(-50%) scale(1.1);
+.button--next {
+  right: -3px;
 }
 
-.pets-carousel-btn.prev {
-  left: 20px;
+.button--prev {
+  left: -3px;
+  transform: scaleX(-1);
 }
 
-.pets-carousel-btn.next {
-  right: 20px;
+.arrow-svg_1j4 {
+  width: 12px;
+  height: 12px;
+  fill: #dedddc;
 }
 
-/* Крапки (індикатори) */
-.pets-carousel-dots {
-  text-align: center;
-  padding: 30px 0 10px;
+@media (min-width: 450px) {
+  .pets-carousel-item {
+    min-height: 247px;
+  }
 }
 
-.pets-carousel-dots .dot {
-  width: 10px;
-  height: 10px;
-  background: #ddd;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 6px;
-  cursor: pointer;
-  transition: all 0.3s;
+@media (min-width: 767px) {
+  .pets-carousel-item {
+    margin: 0 15px;
+    min-height: 339px;
+  }
+
+  .pets-title {
+    font-size: 23px;
+  }
+
+  .pets-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .pets-carousel-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .arrow-svg_1j4 {
+  width: 20px;
+  height: 20px;
 }
 
-.pets-carousel-dots .dot.active {
-  background: #4a90e2;
-  transform: scale(1.3);
+  .button--next {
+  right: 0px;
 }
 
-/* Адаптивність */
-@media (max-width: 1200px) {
-  .pet-card { min-width: 33.333%; } /* 3 картки */
+.button--prev {
+  left: 0px;
+}
 }
 
-@media (max-width: 900px) {
-  .pet-card { min-width: 50%; }     /* 2 картки */
-  .pets-carousel-title { font-size: 38px; }
+@media (min-width: 1200px) {
+  .pets-carousel-button {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .arrow-svg_1j4 {
+  width: 30px;
+  height: 30px;
+  fill: #7b7774;
+}
+ 
+.button--next {
+  right: -15px;
 }
 
-@media (max-width: 600px) {
-  .pet-card { min-width: 100%; }    /* 1 картка */
-  .pets-carousel-title { font-size: 32px; }
-  .pets-carousel-subtitle { font-size: 18px; }
-  .pets-carousel-btn { width: 48px; height: 48px; font-size: 24px; }
+.button--prev {
+  left: -15px;
+}
 }
