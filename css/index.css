@@ -4,4 +4,6 @@
 @import "index.hero-partial.css";
 @import "index.banner-partial.css";
 @import "index.pets_carousel-partial.css";
-@import "index.advantages.css"
+@import "index.advantages.css";
+@import "index.trending_products.css";
+@import "global.footer.css";

@@ -1,6 +1,7 @@
 function init() {
     import('./header-nav.js');
     import('./pets-carousel.js');
+    import('./trending-products-carousel.js');
 }
 
 const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;

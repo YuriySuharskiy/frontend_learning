@@ -1,38 +1,7 @@
 // ─────────────────────── НОВИЙ JS (повністю заміни старий) ──────────────────────
-const slides = [
-  `<div class="pets-carousel-item">
-    <img src="img/carousels/pets/dog.png" alt="Dog" class="pets-image" />
-    <p class="pets-title">For Dogs <span class="pets_highlight">→</span></p>
-    <p class="pets-description">Dry & Canned Food • Jerky • Chewy Treats • Bowls • Toys • Collars and Leashes • Clothes •</p>
-  </div>`,
-  `<div class="pets-carousel-item">
-    <img src="img/carousels/pets/cat.png" alt="Cat" class="pets-image" />
-    <p class="pets-title">For Cats <span class="pets_highlight">→</span></p>
-    <p class="pets-description">Dry Food • Wet Food • Treats • Catnip & Grass • Litter Boxes • Bowls & Feeders • Toys • Beds • </p>
-  </div>`,
-  `<div class="pets-carousel-item">
-    <img src="img/carousels/pets/parrot.png" alt="Parrot" class="pets-image" />
-    <p class="pets-title">For Parrots <span class="pets_highlight">→</span></p>
-    <p class="pets-description">Food • Treats • Cages & Stands • Vitamins • Bowls & Feeders • Litter & Nesting • Odor Control •</p>
-  </div>`,
-  `<div class="pets-carousel-item">
-    <img src="img/carousels/pets/rabbit.png" alt="Rabbit" class="pets-image" />
-    <p class="pets-title">For Rabbits <span class="pets_highlight">→</span></p>
-    <p class="pets-description">Food • Treats • Hay • Cages • Litter & Bedding • Harnesses • Toys • Odor Removers • </p>
-  </div>`,
-  `<div class="pets-carousel-item">
-    <img src="img/carousels/pets/hamster.png" alt="Hamster" class="pets-image" />
-    <p class="pets-title">For Hamsters <span class="pets_highlight">→</span></p>
-    <p class="pets-description">Food • Soft & Chewy Treats • Litter • Furniture • Collars and Leashes • Bowls • Toys • Beds • </p>
-  </div>`,
-  `<div class="pets-carousel-item">
-    <img src="img/carousels/pets/fish.png" alt="Fish" class="pets-image" />
-    <p class="pets-title">For Fish <span class="pets_highlight">→</span></p>
-    <p class="pets-description">Food • Feeders • Aquariums • Filters & Pumps • Cleaning • Water Care • Decor •</p>
-  </div>`
-];
 
-const track = document.querySelector('.pets-carousel-track');
+const track = document.querySelector('.trending_products_carousel_track');
+const slides = track ? Array.from(track.children).map(card => card.outerHTML) : [];
 let currentIndex = 0;
 let isAnimating = false;
 let animationTimeout = null;

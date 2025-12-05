@@ -134,6 +134,13 @@
     }
 }
 
-.hero-bg_is-active {
-    display: none;
+.hero-section_is-active {
+
+    .hero-bg {
+        display: none;
+    }
+
+    .hero-wrapper {
+        display: none;
+    }
 }

@@ -19,34 +19,6 @@
   align-items: center;
   font-weight: 600;
   font-family: var(--font-family-secondary);
-
-  a {
-    color: #6b6b6b;
-  }
-  a {
-    position: relative;
-  }
-
-  a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: black;
-    transition: width 0.3s ease;
-  }
-
-  a:hover {
-    color: var(--font-color-highlight);
-    text-decoration: none;
-    transition: 0.3s;
-  }
-
-  a:hover::after {
-    width: 100%;
-  }
 }
 
 .header__nav-social_links {
@@ -64,6 +36,11 @@
   color: white;
   font-family: Arial, sans-serif;
   font-weight: bold;
+}
+.header__nav-social_circle:hover {
+  background-color: #34969a;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .header__nav-hamburger {
@@ -179,15 +156,21 @@
   }
 }
 
-.header__nav_is-active {
-  overflow: hidden;
-  
+body.no-scroll {
+    overflow: hidden; /* Вимикаємо прокрутку */
+    scrollbar-width: none; /* Для Firefox */
+  }
 
+.header__nav_is-active {
+  /* Відключаємо скролінг на body */
+
+
+  /* Стилі для меню навігації */
   .header__nav-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 70px; /* Відстань від верху */
     left: 0;
     width: 100%;
     padding: 20px 0;
@@ -197,16 +180,17 @@
       padding: 10px 20px;
       font-size: 17px;
       font-weight: 600;
-      color: #6B6B6B;
+      color: #6B6B6B; /* Колір тексту */
     }
   }
 
+  /* Стилі для соціальних посилань */
   .header__nav-social_links {
     display: flex;
     flex-direction: row;
     gap: 15px;
     position: absolute;
-    top: 433px;
+    top: 433px; /* Відстань від верху */
     left: 0;
     width: 100%;
     padding: 20px 0;
@@ -214,12 +198,14 @@
     justify-content: center;
   }
 
+  /* Стилі для соціальних кругів */
   .header__nav-social_circle {
     width: 30px;
     height: 30px;
     font-size: 21px;
   }
 
+  /* Стилі для верхньої навігації */
   .header__top_nav {
     display: flex;
     flex-direction: column;
@@ -228,7 +214,7 @@
     color: var(--font-color-highlight);
     position: absolute;
     font-weight: 700;
-    top: 300px;
+    top: 300px; /* Відстань від верху */
     left: 0;
     width: 100%;
     padding: 20px 0;

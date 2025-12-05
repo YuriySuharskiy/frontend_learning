@@ -1,4 +1,5 @@
-/* === PETS CAROUSEL — точно як на твоєму макеті === */
+/* === PETS CAROUSEL — ОНОВЛЕНА ВЕРСІЯ 2025 (infinite + плавний заїзд) === */
+
 .pets-carousel-container {
   text-align: center;
   padding: 50px 24px;
@@ -30,20 +31,43 @@
   font-family: var(--font-family-secondary);
 }
 
-/* Головний контейнер каруселі */
+/* Головний контейнер */
 .pets-carousel {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 15px;
+  overflow: hidden; /* місце під стрілки на десктопі */
+}
+
+
+/* Трек — тепер flex + gap */
+.pets-carousel-track {
   display: flex;
-  position: relative;
-  align-items: center;
+  gap: 30px;
+  margin-left: -15px; /* ДОДАНО: компенсація першого gap */
+}
+
+/* Одна картка */
+.pets-carousel-item {
+  flex: 0 0 calc(100% - 15px); /* ЗМІНЕНО: вичитаємо половину gap */
+  min-height: 287px;
+  padding: 33px 20px;
+  background: #fff;
+  border: 2px solid #ffe6d4;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  align-content: start;
+  justify-items: center;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .pets-image {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .pets-title {
@@ -57,35 +81,22 @@
 .pets_highlight {
   color: var(--color-secondary-highlight);
   margin-left: 4px;
+  position: relative;
+  top: 2px;
 }
 
 .pets-description {
   font-family: var(--font-family-secondary);
   font-size: 15px;
-  color: #666;
+  color: var(--font-color-secondary);
   line-height: 1.6;
   margin: 20px 0 0 0;
 }
 
-.pets-carousel-item {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  justify-items: center;
-  padding: 33px 20px;
-  border: 2px solid #ffe6d4;
-  margin: 0 7px;
-  min-height: 287px;
-  width: 100%;
-}
-
-.pets-carousel-track {
-  display: flex;
-  width: 100%;
-}
-
 .pets-carousel-button {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: #585550;
   border: none;
   border-radius: 50%;
@@ -95,46 +106,52 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
+  z-index: 10;
+  transition: all 0.3s ease;
 }
 
-.button--next {
-  right: -3px;
+.pets-carousel-button:hover {
+  background: #3C3741;
+  transform: translateY(-50%);
 }
 
 .button--prev {
-  left: -3px;
-  transform: scaleX(-1);
+  left: 4px;
+}
+
+.button--next {
+  right: 4px;
+}
+
+.button--prev svg {
+  transform: rotate(180deg);
 }
 
 .arrow-svg_1j4 {
   width: 12px;
   height: 12px;
   fill: #dedddc;
+  transition: 8px;
 }
 
-@media (min-width: 450px) {
-  .pets-carousel-item {
-    min-height: 247px;
-  }
-}
+/* ─────── АДАПТИВНІСТЬ ─────── */
 
+/* Таблет: 2 картки */
 @media (min-width: 767px) {
-  .pets-carousel-item {
-    margin: 0 15px;
-    min-height: 339px;
+  .pets-carousel-track {
+    margin-left: 0; /* ДОДАНО: скидання на таблеті */
   }
 
-  .pets-title {
-    font-size: 23px;
+  .pets-carousel-item {
+    flex: 0 0 calc(50% - 25px); /* 2 картки – половина мінус половина gap */
+    min-height: 339px;
   }
 
   .pets-image {
     width: 120px;
     height: 120px;
   }
-
+  
   .pets-carousel-button {
     width: 32px;
     height: 32px;
@@ -145,32 +162,43 @@
   height: 20px;
 }
 
+  .pets-title {
+    font-size: 24px;
+  }
+
+  .button--prev {
+    left: 10px;
+  }
+
   .button--next {
-  right: 0px;
+    right: 10px;
+  }
 }
 
-.button--prev {
-  left: 0px;
-}
+@media (min-width: 991px) {
+  .pets-carousel-item {
+    flex: 0 0 calc(25% - 27.5px); /* 3 картки: третина мінус ⅔ gap */
+  }
 }
 
+/* На великому екрані — прозорі стрілки поза каруселлю */
 @media (min-width: 1200px) {
   .pets-carousel-button {
     background: transparent;
-    box-shadow: none;
+    width: 60px;
+    height: 60px;
   }
 
-  .arrow-svg_1j4 {
-  width: 30px;
-  height: 30px;
-  fill: #7b7774;
-}
- 
-.button--next {
-  right: -15px;
-}
+  .pets-carousel-button:hover {
+    background: transparent;
+  }
 
-.button--prev {
-  left: -15px;
-}
+  .button--prev  { left: -20px; }
+  .button--next  { right: -20px; }
+
+  .arrow-svg_1j4 {
+    width: 30px;
+    height: 30px;
+    fill: #7b7774;
+  }
 }

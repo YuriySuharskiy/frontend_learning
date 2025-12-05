@@ -1,0 +1,115 @@
+.trending_products_container {
+    max-width: 1200px;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 90px 24px;
+    gap: 20px;
+}
+
+.trending_products_title {
+    font-size: 30px;
+}
+
+.trending_products_bone {
+    height: 32px;
+}
+
+.trending_products_subtitle {
+    font-size: 19px;
+    text-align: center;
+}
+
+.trending_products_carousel_container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 15px 0;
+  /* overflow: hidden; місце під стрілки на десктопі */
+}
+
+
+/* Трек — тепер flex + gap */
+.trending_products_carousel_track {
+  display: flex;
+  gap: 30px;
+  margin-left: -15px; /* ДОДАНО: компенсація першого gap */
+}
+
+/* Одна картка */
+.trending_product_card {
+  flex: 0 0 calc(100% + 15px); /* ЗМІНЕНО: вичитаємо половину gap */
+  padding: 20px 15px;
+  background: #fff;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  align-content: start;
+  justify-items: start;
+  text-align: left;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+.trending_product_image {
+    width: 322px;
+    height: 322px;
+    object-fit: cover;
+}
+
+.trending_product_name {
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.trending_product_price {
+    font-size: 18px;
+    margin-top: 16px;
+    color: var(--font-color-highlight);
+}
+
+.trending_product_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16.5px;
+    font-family: var(--font-family-secondary);
+    letter-spacing: 1px;
+    height: 51.8px;
+    color: #45c1c6;
+    text-decoration: none;
+    background-color: #b2e7e9;
+    padding: 16px 28px;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.trending_products-carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #585550;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.trending_products-carousel-button:hover {
+  background: #3C3741;
+  transform: translateY(-50%);
+}
+
