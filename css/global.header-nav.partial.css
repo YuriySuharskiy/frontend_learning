@@ -19,6 +19,32 @@
   align-items: center;
   font-weight: 600;
   font-family: var(--font-family-secondary);
+
+  a {
+    color: #6b6b6b;
+    position: relative;
+    padding-bottom: 5px;
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3c3731;
+    transition: width 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--font-color-highlight);
+    text-decoration: none;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
 }
 
 .header__nav-social_links {
@@ -39,8 +65,8 @@
 }
 .header__nav-social_circle:hover {
   background-color: #34969a;
-    text-decoration: none;
-    transition: 0.3s;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .header__nav-hamburger {
@@ -146,9 +172,7 @@
   }
 }
 
-
 @media (min-width: 1164px) {
-
   .header__nav-menu {
     display: flex;
     gap: 40px;
@@ -157,13 +181,12 @@
 }
 
 body.no-scroll {
-    overflow: hidden; /* Вимикаємо прокрутку */
-    scrollbar-width: none; /* Для Firefox */
-  }
+  overflow: hidden; /* Вимикаємо прокрутку */
+  scrollbar-width: none; /* Для Firefox */
+}
 
 .header__nav_is-active {
   /* Відключаємо скролінг на body */
-
 
   /* Стилі для меню навігації */
   .header__nav-menu {
@@ -180,7 +203,14 @@ body.no-scroll {
       padding: 10px 20px;
       font-size: 17px;
       font-weight: 600;
-      color: #6B6B6B; /* Колір тексту */
+      color: #6b6b6b; /* Колір тексту */
+    }
+    a:hover {
+      color: var(--font-color-highlight);
+    }
+
+    a::after {
+      display: none;
     }
   }
 

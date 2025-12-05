@@ -1,3 +1,9 @@
+.footer-contact-us,
+.footer-map {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .footer-contact-us {
   padding: 90px 24px 25px;
   display: flex;
@@ -10,7 +16,6 @@
   color: var(--font-color-highlight);
   font-weight: 700;
 }
-
 
 .footer-contact-us-text {
   margin-top: 50px;
@@ -124,10 +129,10 @@
 }
 
 .footer-map-logo-social_circle:hover {
-    background-color: #34969a;
-    text-decoration: none;
-    transition: 0.3s;
-  }
+  background-color: #34969a;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
 .footer-map-card {
   margin-top: 50px;
@@ -139,25 +144,25 @@
 }
 
 .footer-map-title {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .footer-map-underline {
-    background-color: var(--font-color-highlight);
-    height: 3px;
-    width: 49px;
-    border: none;
+  background-color: var(--font-color-highlight);
+  height: 3px;
+  width: 49px;
+  border: none;
 }
 
 .footer-map-link {
-    font-size: 17px;
-    color: var(--font-color-secondary);
-    font-weight: 600;
+  font-size: 17px;
+  color: var(--font-color-secondary);
+  font-weight: 600;
 }
 
 .footer-map-link:hover {
-    text-decoration: underline;
-    color: var(--font-color-primary)
+  text-decoration: underline;
+  color: var(--font-color-primary);
 }
 
 .footer-contact-us-title {
@@ -175,8 +180,13 @@
   justify-content: center;
 }
 
-.bottom-line {
+.footer-bottom-line {
   background-color: #f3e8e4;
+}
+
+.bottom-line {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 5px 24px;
   display: flex;
   flex-direction: column;
@@ -195,7 +205,6 @@
     flex-direction: row;
     padding: 95px 17px 25px;
   }
-
 
   .footer-map {
     flex-direction: row;
@@ -216,23 +225,22 @@
     width: 39.84vw;
   }
 
-  .footer-contact-us-second{
-    width: 31.90vw;
+  .footer-contact-us-second {
+    width: 31.9vw;
   }
-  
+
   .footer-contact-us-third {
     width: 23.83vw;
   }
-  
+
   .footer-contact-us-first,
   .footer-contact-us-second,
   .footer-contact-us-third {
     padding: 0 15px;
   }
 
-  .footer-contact-us-second,
-  .footer-contact-us-third {
-    padding: 40px 15px 0;
+  .footer-contact-us-second{
+    padding: 10px 15px 0;
   }
 
   .footer-contact-us-title {
@@ -263,7 +271,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
   }
 
   .footer-map-logo-text {
